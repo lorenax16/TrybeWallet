@@ -4,10 +4,10 @@ export const INFO_WALLET = 'INFO_WALLET';
 
 export const actionInfoPersonal = (email) => ({
   type: SAVE_EMAIL,
-  user: { email },
+  payload: email,
 });
 
 export const actionInfoWAllet = (currencies, expenses) => ({
   type: INFO_WALLET,
-  wallet: { currencies, expenses },
+  payload: { currencies, expenses },
 });
