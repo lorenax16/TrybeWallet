@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrencies, adicionarDispesa } from '../actions';
 import Header from '../cmponents/Header';
+import Tabela from '../cmponents/Tabela';
 
 class Wallet extends React.Component {
   constructor() {
@@ -124,6 +125,7 @@ class Wallet extends React.Component {
             Adicionar despesa
           </button>
         </form>
+        <Tabela />
       </>
     );
   }
