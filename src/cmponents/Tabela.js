@@ -1,10 +1,11 @@
 import propTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteAction } from '../actions';
 
 class Tabela extends Component {
   render() {
-    const { despesas } = this.props;
+    const { despesas, dispatch } = this.props;
     return (
       <>
         <div>Tabela</div>
@@ -41,7 +42,18 @@ class Tabela extends Component {
 
                 </td>
                 <td>Real</td>
-                <td>Editar/Excluir</td>
+                <td>Editar</td>
+                <td>
+                  <button
+                    name="button"
+                    data-testid="delete-btn"
+                    type="button"
+                    onClick={ () => dispatch(deleteAction(despesa.id)) }
+                  >
+                    Excluir
+                  </button>
+
+                </td>
               </tr>)) }
 
           </tbody>
@@ -58,6 +70,7 @@ const mapStateToProps = (state) => ({
 
 Tabela.propTypes = {
   despesas: propTypes.func.isRequired,
+  dispatch: propTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(Tabela);

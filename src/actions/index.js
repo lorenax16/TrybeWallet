@@ -3,6 +3,7 @@ export const SAVE_EMAIL = 'SAVE_EMAIL';
 export const INFO_WALLET = 'INFO_WALLET';
 export const INFO_MOEDA = 'INFO_MOEDA';
 export const SET_CURRENCIES = 'SET_CURRENCIES';
+export const DELETE_DESPESA = 'DELETE_DESPESA';
 
 export const actionInfoPersonal = (email) => ({
   type: SAVE_EMAIL,
@@ -37,3 +38,8 @@ export function adicionarDispesa(despesa) {
     dispatch(actionInfoWAllet(dados));
   };
 }
+
+export const deleteAction = (valor) => ({
+  type: DELETE_DESPESA,
+  valor,
+});
